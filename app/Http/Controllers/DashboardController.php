@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \App\Models\Plan;
+use \App\Models\Entreprise;
+
 
 class DashboardController extends Controller
 {
@@ -10,8 +13,8 @@ class DashboardController extends Controller
     {
         // Logique pour récupérer les données nécessaires pour le tableau de bord
         // Par exemple, vous pouvez récupérer les plans, les entreprises, etc.
-        $plans = \App\Models\Plan::all();
-        $entreprises = \App\Models\Entreprise::all();
+        $plans = Plan::all();
+        $entreprises = Entreprise::all();
 
         return view('dashboard', compact('plans', 'entreprises'));
     }
